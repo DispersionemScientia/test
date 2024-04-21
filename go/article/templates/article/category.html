@@ -1,0 +1,13 @@
+{% extends 'article/base.html' %}
+
+{% block title_name %}
+{{ category.name_category }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ category.name_category }}</h1>
+{% for article in articles %}
+<p>Овощи: <a href="{% url 'article:article' article.id %}">{{ article.name }}</p></a>
+
+{% endfor %}
+{% endblock content %}

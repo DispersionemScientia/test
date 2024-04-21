@@ -1,0 +1,16 @@
+{% extends 'article/base.html' %}
+
+{% block title_name %}
+Добавить категорию
+{% endblock %}
+
+{% block content %}
+
+<h1>Добавить новую категорию!</h1>
+<form action="{% url 'article:add_category' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Добавить!</button>
+</form>
+
+{% endblock content %}
